@@ -2,22 +2,10 @@ import React, { useState } from 'react';
 import { AlertTriangle, TrendingUp, Building2 } from 'lucide-react';
 
 const Dashboard = () => {
-  // Mock Data
   const [rentPush, setRentPush] = useState(0);
   const totalSqFt = 85000;
   const capRate = 5.5;
 
-  // Calculated Metrics
-  const additionalIncome = totalSqFt * rentPush;
-  const valuationGain = additionalIncome / (capRate / 100);
-
-  const floors = [
-    { id: 3, suites: [{ name: "TechGlobal", risk: 85, sqft: "25k" }, { name: "Vacant", risk: 0, sqft: "10k" }] },
-    { id: 2, suites: [{ name: "Law Group", risk: 10, sqft: "15k" }, { name: "Creative Co", risk: 45, sqft: "20k" }] },
-    { id: 1, suites: [{ name: "Starbucks", risk: 5, sqft: "5k" }, { name: "Whole Foods", risk: 12, sqft: "10k" }] },
-  ];
-// ... rest of the code stays exactly the same
-  // Calculated Metrics
   const additionalIncome = totalSqFt * rentPush;
   const valuationGain = additionalIncome / (capRate / 100);
 
@@ -29,7 +17,6 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 p-8 font-sans">
-      {/* Header */}
       <div className="flex justify-between items-center mb-10">
         <div>
           <h1 className="text-3xl font-bold text-white tracking-tight">Asset Command Center</h1>
@@ -43,8 +30,6 @@ const Dashboard = () => {
       </div>
 
       <div className="grid grid-cols-12 gap-8">
-        
-        {/* LEFT COLUMN: The Visual Stacking Plan */}
         <div className="col-span-8 bg-slate-900/50 border border-slate-800 rounded-2xl p-6">
           <h2 className="text-xl font-semibold mb-6 flex items-center gap-2">
             <Building2 size={20} className="text-blue-400" /> Building Health Heatmap
@@ -73,10 +58,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: The Value Simulator */}
         <div className="col-span-4 flex flex-col gap-8">
-          
-          {/* Simulation Card */}
           <div className="bg-blue-600/10 border border-blue-500/30 rounded-2xl p-6">
             <h3 className="text-lg font-bold text-blue-400 mb-4 flex items-center gap-2">
               <TrendingUp size={18} /> Strategic Simulator
@@ -95,7 +77,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Risk Summary */}
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
             <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
               <AlertTriangle size={18} className="text-yellow-500" /> Active Risks
@@ -105,10 +86,8 @@ const Dashboard = () => {
                 <span className="text-sm">TechGlobal (L3)</span>
                 <span className="text-xs font-bold text-red-500">85% RISK</span>
               </div>
-              <p className="text-[11px] text-slate-500">Risk detected via IoT: 60% drop in floor utilization over 90 days.</p>
             </div>
           </div>
-
         </div>
       </div>
     </div>
