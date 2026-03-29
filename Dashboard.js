@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
-import { Activity, AlertTriangle, TrendingUp, DollarSign, Building2, Users } from 'lucide-react';
+import { AlertTriangle, TrendingUp, Building2 } from 'lucide-react';
 
 const Dashboard = () => {
-  // Mock Data for V1.0 + V2.0 Integration
+  // Mock Data
   const [rentPush, setRentPush] = useState(0);
-  const currentNOI = 1250000;
   const totalSqFt = 85000;
   const capRate = 5.5;
 
+  // Calculated Metrics
+  const additionalIncome = totalSqFt * rentPush;
+  const valuationGain = additionalIncome / (capRate / 100);
+
+  const floors = [
+    { id: 3, suites: [{ name: "TechGlobal", risk: 85, sqft: "25k" }, { name: "Vacant", risk: 0, sqft: "10k" }] },
+    { id: 2, suites: [{ name: "Law Group", risk: 10, sqft: "15k" }, { name: "Creative Co", risk: 45, sqft: "20k" }] },
+    { id: 1, suites: [{ name: "Starbucks", risk: 5, sqft: "5k" }, { name: "Whole Foods", risk: 12, sqft: "10k" }] },
+  ];
+// ... rest of the code stays exactly the same
   // Calculated Metrics
   const additionalIncome = totalSqFt * rentPush;
   const valuationGain = additionalIncome / (capRate / 100);
